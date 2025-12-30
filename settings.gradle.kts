@@ -23,3 +23,5 @@ dependencyResolutionManagement {
 rootProject.name = "Do Do Donkey"
 
 include(":app")
+include(":library")
+include(":domain")
