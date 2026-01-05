@@ -7,6 +7,8 @@
 
     <string name="artists">Artists</string>
 
+    <string name="unknown_artist">Unknow artist</string>
+
     <string name="permission_rationale_title">Permission denied</string>
     <string name="permission_rationale_request_media_storage">Sorry, we need storage permission to access song files. grant on app settings.</string>
     <string name="permission_rationale_request_media_storage_go_to_settings">Media storage access disabled, go to app settings to enable.</string>

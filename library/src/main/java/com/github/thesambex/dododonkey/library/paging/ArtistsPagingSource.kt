@@ -29,10 +29,12 @@ class ArtistsPagingSource(private val contentResolver: ContentResolver) :
                 val bundle = Bundle().apply {
                     putInt(ContentResolver.QUERY_ARG_OFFSET, page * pageSize)
                     putInt(ContentResolver.QUERY_ARG_LIMIT, pageSize)
-                    putString(
+
+                    putStringArray(
                         ContentResolver.QUERY_ARG_SORT_COLUMNS,
-                        MediaStore.Audio.Artists.ARTIST
+                        arrayOf(MediaStore.Audio.Artists.ARTIST)
                     )
+
                     putInt(
                         ContentResolver.QUERY_ARG_SORT_DIRECTION,
                         ContentResolver.QUERY_SORT_DIRECTION_ASCENDING

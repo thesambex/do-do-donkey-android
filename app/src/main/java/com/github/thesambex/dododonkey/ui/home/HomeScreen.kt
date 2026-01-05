@@ -3,6 +3,9 @@ package com.github.thesambex.dododonkey.ui.home
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.consumeWindowInsets
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.People
+import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarDefaults
 import androidx.compose.material3.NavigationBarItem
@@ -12,6 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
@@ -61,10 +65,14 @@ private fun BottomBar(onSelectedIndex: (index: Int) -> Unit) {
         mutableIntStateOf(0)
     }
 
-    data class Item(val id: Int, @param:StringRes val name: Int)
+    data class Item(
+        val id: Int,
+        @param:StringRes val name: Int,
+        val imageVector: ImageVector
+    )
 
     val items = listOf(
-        Item(1, R.string.artists)
+        Item(1, R.string.artists, Icons.Outlined.People)
     )
 
     NavigationBar(windowInsets = NavigationBarDefaults.windowInsets) {
@@ -75,7 +83,12 @@ private fun BottomBar(onSelectedIndex: (index: Int) -> Unit) {
                     selectedNavigationIndex.intValue = index
                     onSelectedIndex(index)
                 },
-                icon = {},
+                icon = {
+                    Icon(
+                        imageVector = item.imageVector,
+                        contentDescription = stringResource(item.name)
+                    )
+                },
                 label = { Text(stringResource(item.name)) }
             )
         }
