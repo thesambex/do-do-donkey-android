@@ -16,6 +16,6 @@ object Library {
 
     @Provides
     @Singleton
-    fun providesPhoneLibrary(@ApplicationContext context: Context): MediaLibrary = PhoneLibrary(context)
+    fun providesPhoneLibrary(@ApplicationContext context: Context): MediaLibrary = PhoneLibrary(context.contentResolver)
 
 }

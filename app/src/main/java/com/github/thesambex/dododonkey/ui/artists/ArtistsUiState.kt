@@ -1,9 +1,9 @@
-package com.github.thesambex.dododonkey.library
+package com.github.thesambex.dododonkey.ui.artists
 
 import androidx.paging.PagingData
 import com.github.thesambex.dododonkey.domain.artists.Artist
 import kotlinx.coroutines.flow.Flow
 
-interface MediaLibrary {
-    suspend fun listArtists(): Flow<PagingData<Artist>>
-}
+data class ArtistsUiState(
+    val artists: Flow<PagingData<Artist>>? = null
+)

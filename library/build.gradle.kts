@@ -47,6 +47,7 @@ dependencies {
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.paging.runtime)
 
     implementation(libs.hilt)
     ksp(libs.hilt.compiler)
@@ -63,5 +64,7 @@ dependencies {
     kspTest(libs.hilt.compiler)
 
     testImplementation(libs.junit)
+    testImplementation(libs.mockito.kotlin)
+    testImplementation(libs.coroutines.test)
     androidTestImplementation(libs.androidx.junit)
 }
